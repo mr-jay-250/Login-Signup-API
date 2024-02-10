@@ -12,7 +12,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route
           path="/"
-          element={<Navigate replace to="/signup" />} // Default route to /signup
+          element={<Navigate replace to="/signup" />}
         />
         <Route
           path="/profile"

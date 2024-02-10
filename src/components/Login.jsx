@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useHistory from React Router
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const navigate = useNavigate(); // Create a history object from React Router
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
@@ -17,7 +17,7 @@ const Login = () => {
       console.log(response.data.message);
 
       localStorage.setItem('userToken', response.data.token);
-      navigate.push('/profile'); // Use history.push to navigate to the profile page
+      navigate('/profile');
     } catch (error) {
       console.error('Login error:', error);
     }

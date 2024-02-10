@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate  } from 'react-router-dom'; // Import useHistory from React Router
+import { useNavigate  } from 'react-router-dom';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -9,7 +9,7 @@ const Signup = () => {
   const [dob, setDob] = useState('');
   const [contact, setContact] = useState('');
 
-  const navigate = useNavigate(); // Create a history object from React Router
+  const navigate = useNavigate();
 
   const handleSignup = async () => {
     try {
@@ -23,7 +23,7 @@ const Signup = () => {
       console.log(response.data.message);
 
       localStorage.setItem('userToken', response.data.token);
-      navigate.push('/login'); // Use history.push to navigate to the login page
+      navigate('/profile');
     } catch (error) {
       console.error('Signup error:', error);
     }
